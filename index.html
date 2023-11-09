@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+<body>
+  <main>
+    <article id="left-side">
+      <div class="front-image">
+        <img src="./images/bg-card-front.png" alt="image of front of the card" class="front-card">
+        <img src="./images/card-logo.svg" alt="card logo" class="card-logo">
+        <h2 >0000 0000 0000 0000</h2>
+        <h3 class="user-name">Jane Appleseed</h3>
+        <h3 class="user-exp"><span class="mm">00</span>/<span class="yy">00</span></h3>
+      </div>
+      <div class="back-image">
+        <img src="./images/bg-card-back.png" alt="image of back of the card" class="back-card">
+        <h3 class="user-cvc">000</h3>
+      </div>
+    </article>
+    <article id="right-side" >
+      <form id="form">
+        <label for="name" class="field-label">Cardholder Name</label>
+        <div class="name-field field">
+          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" onkeyup="changeName()">
+        </div>
+        <label for="number" class="field-label">Card Number</label>
+        <div class="number-field field">
+          <input type="text" name="number" id="number" class="number" inputmode="numeric" onkeyup="validateCardNumber()" maxlength="19" minlength="19" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="error hide">Wrong format, numbers only</p>
+        </div>
+        <div class="exp-date-and-cvc field">
+          <label for="exp-date" class="label-exp-date">exp.date (mm/yy)</label> 
+          <label for="cvc" class="label-cvc">CVC</label>
+          <div class="exp-date">
+            <input type="text" inputmode="numeric" class="exp" name="month" id="exp-month" placeholder="MM" maxlength="2" minlength="2" onblur="validateDateNotEmpty()">
+            <input type="text" inputmode="numeric" class="exp" name="year"  id="exp-year" placeholder="YY" maxlength="2" minlength="2" onblur="validateDateNotEmpty()">
+            <input type="text" inputmode="numeric" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3" minlength="3" onblur="validateCVCNotEmpty()">
+            <p> <span class="date-error error hide">Can't be blank</span><span class="cvc-error error hide">Can't be blank</span></p>
+          </div>
+        </div>
+        <button type="submit">Confirm</button>
+      </form>
+      <div class="hide thank-you">
+        <img src="./images/icon-complete.svg" alt="check icon">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </div>
+    </article>
+
+    
+  </main>
+
+
+
+  <!-- Completed state start -->
+
+  <!-- Thank you!
+  We've added your card details
+  Continue
+   -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Bilguun Purevdorj</a>.
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./index.js"></script>
+  
+</body>
+</html>
